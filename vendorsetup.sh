@@ -21,3 +21,4 @@
 # function: add_lunch_combo generic-eng
 
 add_lunch_combo cm_e8_3d-eng
+add_lunch_combo omni_e8_3d-eng

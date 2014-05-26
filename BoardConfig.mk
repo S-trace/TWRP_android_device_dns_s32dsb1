@@ -17,6 +17,7 @@
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
+TARGET_CPU_VARIANT := cortex-a9
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_VFP := true
 TARGET_ARCH := arm
@@ -41,7 +42,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_stora
 # TWRP
 # # RECOVERY_GRAPHICS_USE_LINELENGTH := true
 # # TW_EXCLUDE_SUPERSU := true
-TARGET_RECOVERY_INITRC := device/gadmei/e8_3d/recovery.init.rc
+TARGET_RECOVERY_INITRC := device/gadmei/e8_3d/recovery/init.rc
 DEVICE_RESOLUTION := 800x1280
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 TW_INTERNAL_STORAGE_PATH := "/emmc"
@@ -52,7 +53,7 @@ TW_FLASH_FROM_STORAGE := true
 TW_CUSTOM_POWER_BUTTON := 116
 TW_NO_REBOOT_BOOTLOADER := true
 TWHAVE_SELINUX := true
-PRODUCT_COPY_FILES += device/gadmei/e8_3d/twrp.fstab:recovery/root/etc/twrp.fstab
+PRODUCT_COPY_FILES += device/gadmei/e8_3d/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
 TARGET_PREBUILT_KERNEL := device/gadmei/e8_3d/kernel
 BOARD_KERNEL_BASE := 0x80008000
