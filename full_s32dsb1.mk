@@ -18,7 +18,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.root=1 \
     ro.secure=0 \
     ro.allow.mock.location=1 \
-    ro.debuggable=1 \
-    sys.uses.ext4=1
+    ro.debuggable=1 
     
 $(call inherit-product, build/target/product/full_base.mk)

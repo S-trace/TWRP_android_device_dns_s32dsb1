@@ -38,6 +38,9 @@ on boot
 service ueventd /sbin/ueventd
     critical
 
+service remotecontrol /sbin/remotecfg /etc/remote.conf
+    oneshot
+
 service console /sbin/sh
     console
 

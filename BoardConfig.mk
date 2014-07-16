@@ -29,34 +29,59 @@ ARCH_ARM_HAVE_ARMV7A := true
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
-TARGET_BOARD_PLATFORM := meson6
-TARGET_BOOTLOADER_BOARD_NAME := g11n8
+TARGET_BOARD_PLATFORM := meson-m1
+TARGET_BOOTLOADER_BOARD_NAME := cvt_tv
 TARGET_NO_BOOTLOADER := true
 # TARGET_NO_KERNEL := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_SIMULATOR := false
 TARGET_PROVIDES_INIT_RC := true
 
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
+# TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 
 # TWRP
 # # RECOVERY_GRAPHICS_USE_LINELENGTH := true
 # # TW_EXCLUDE_SUPERSU := true
-TARGET_RECOVERY_INITRC := device/gadmei/e8_3d/recovery/init.rc
-DEVICE_RESOLUTION := 800x1280
+TARGET_RECOVERY_INITRC := device/dns/s32dsb1/recovery/init.rc
+DEVICE_RESOLUTION := 1280x720
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
-TW_INTERNAL_STORAGE_PATH := "/emmc"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "emmc"
+TWHAVE_SELINUX := true
+
+# Storage configuration
 TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
 TW_FLASH_FROM_STORAGE := true
-TW_CUSTOM_POWER_BUTTON := 116
-TW_NO_REBOOT_BOOTLOADER := true
-TWHAVE_SELINUX := true
-PRODUCT_COPY_FILES += device/gadmei/e8_3d/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
-TARGET_PREBUILT_KERNEL := device/gadmei/e8_3d/kernel
+# For classic partitioned device
+# TW_INTERNAL_STORAGE_PATH := "/media"
+# TW_INTERNAL_STORAGE_MOUNT_POINT := "media"
+
+# For datamedia device
+RECOVERY_SDCARD_ON_DATA := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+
+
+# removes the reboot bootloader button from the reboot menu
+TW_NO_REBOOT_BOOTLOADER := true
+
+# disables the display of the battery percentage for devices that don't support it properly
+TW_NO_BATT_PERCENT := true
+
+# removes the USB storage button on devices that don't support USB storage
+TW_NO_USB_STORAGE := true
+
+# forces the rm -rf option to always be on
+TW_ALWAYS_RMRF := true
+
+TW_NO_SCREEN_BLANK := true
+TW_BRIGHTNESS_PATH := "/dev/null"
+
+
+PRODUCT_COPY_FILES += device/dns/s32dsb1/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
+
+TARGET_PREBUILT_KERNEL := device/dns/s32dsb1/kernel
 BOARD_KERNEL_BASE := 0x80008000
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200 rw init=/init loglevel=8
 
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/gadmei/e8_3d/releasetools/amlogic_ota_from_target_files
+# TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/dns/s32dsb1/releasetools/amlogic_ota_from_target_files

@@ -20,5 +20,5 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo cm_e8_3d-eng
-add_lunch_combo omni_e8_3d-eng
+add_lunch_combo cm_s32dsb1-eng
+add_lunch_combo omni_s32dsb1-eng

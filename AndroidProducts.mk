@@ -15,6 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_e8_3d.mk \
-    $(LOCAL_DIR)/cm_e8_3d.mk \
-    $(LOCAL_DIR)/omni_e8_3d.mk
+    $(LOCAL_DIR)/full_s32dsb1.mk \
+    $(LOCAL_DIR)/cm_s32dsb1.mk \
+    $(LOCAL_DIR)/omni_s32dsb1.mk

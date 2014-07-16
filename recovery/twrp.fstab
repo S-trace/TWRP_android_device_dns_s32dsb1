@@ -1,17 +1,16 @@
-/system		ext4	/dev/block/system
-/data		ext4	/dev/block/data  flags=length=-16384
-/cache		ext4	/dev/block/cache
-/emmc		vfat	/dev/block/media flags=display="Internal storage";storage;settingsstorage;wipeingui
+/system		yaffs2	system   flags=wipeingui;usermrf
+/data		yaffs2	userdata flags=wipeingui;length=-16384;usermrf
+/cache		yaffs2	cache    flags=wipeingui;usermrf
+# /media		vfat	/dev/block/avnftl8 flags=display="Internal storage";storage;settingsstorage;wipeingui;usermrf
 
-/sdcard		auto	/dev/block/cardblksd1 /dev/block/cardblksd	flags=display="MicroSD";storage;wipeingui;removable
+/sdcard		auto	/dev/block/cardblksd1 /dev/block/cardblksd	flags=display="SD card";storage;wipeingui;removable
 /sd-ext		auto	/dev/block/cardblksd2	flags=display="SD-EXT";backup=1;wipeingui;removable
-/usb-otg	auto	/dev/block/sda1 /dev/block/sda	flags=display="USB-OTG";storage;wipeingui;removable
+/usb		auto	/dev/block/sda1 /dev/block/sda	flags=display="USB";storage;wipeingui;removable
 
 # Kills the U-Boot when restoring from a backup, DO NOT UNCOMMENT!
-# /bootloader	mtd	bootloader	flags=backup=1;display="U-Boot" 
+# /nandboot	mtd	nandboot	flags=backup=1;display="U-Boot" 
 
-/logo		mtd	logo		flags=backup=1;display="Logo"
+#/ubootenv	mtd	ubootenv	flags=backup=1;display="U-Boot env"
 /aml_logo	mtd	aml_logo	flags=backup=1;display="AML_logo"
 /recovery	mtd	recovery	flags=backup=1;display="Recovery"
 /boot		mtd	boot		flags=backup=1;display="Boot"
-/factory	mtd	factory		flags=backup=1;display="Factory"

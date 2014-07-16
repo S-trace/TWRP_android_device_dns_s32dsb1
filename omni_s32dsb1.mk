@@ -32,12 +32,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/gadmei/e8_3d/full_e8_3d.mk)
+$(call inherit-product, device/dns/s32dsb1/full_s32dsb1.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := omni_e8_3d
-PRODUCT_BRAND := DOTPAD
-PRODUCT_DEVICE := e8_3d
-PRODUCT_MODEL := NEO3DO
-PRODUCT_MANUFACTURER := Gadmei
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=E8-3D TARGET_DEVICE=E8-3D BUILD_FINGERPRINT="DOTPAD/E8-3D/E8-3D:4.1.1/JRO03C/20131214.v005:user/release-keys" PRIVATE_BUILD_DESC="E8-3D-user 4.1.1 JRO03C 20131214.v005 release-keys"
+PRODUCT_NAME := omni_s32dsb1
+PRODUCT_BRAND := MBX
+PRODUCT_DEVICE := s32dsb1
+PRODUCT_MODEL := "S32DSB1"
+PRODUCT_MANUFACTURER := CVTE
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=cvt_tv TARGET_DEVICE=cvt_tv BUILD_FINGERPRINT="MBX/cvt_tv/cvt_tv:4.0.3/TV_20121108.163051/eng.wuanhong.20121108.163026:user/test-keys" PRIVATE_BUILD_DESC="cvt_tv-user 4.0.3 TV_20121108.163051 eng.wuanhong.20121108.163026 test-keys"
